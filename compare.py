@@ -160,9 +160,7 @@ column_mapping = {
     "Last Name": "Last Name",
     "Phone": "Phone",
     "Address": "Address",
-    "Height": "Height",
     "Company": "Company",
-    "ContactID": "ContactID",
     "DateAdded": "DateAdded",
     "Status": "Status",
 }
@@ -170,5 +168,4 @@ column_mapping = {
 primary_key_file1 = "ContactID"
 primary_key_file2 = "ContactID"
 
-compare_excel_files("FILE ONE", "FILE TWO", column_mapping, primary_key_file1, primary_key_file2)
-
+compare_excel_files("FILE ONE.xlsx", "FILE TWO.xlsx", column_mapping, primary_key_file1, primary_key_file2)
