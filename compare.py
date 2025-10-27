@@ -43,8 +43,8 @@ def compare_excel_files(file1, file2, column_mapping, primary_key_file1, primary
     df1, df2 = df1.align(df2, join='inner', axis=0)
 
     # Converting Dates to the same format in both files
-    df1['CloseDate'] = pd.to_datetime(df1['CloseDate']).dt.strftime('%Y-%m-%d')
-    df2['CloseDate'] = pd.to_datetime(df2['CloseDate']).dt.strftime('%Y-%m-%d')
+    # df1['CloseDate'] = pd.to_datetime(df1['CloseDate']).dt.strftime('%Y-%m-%d')
+    # df2['CloseDate'] = pd.to_datetime(df2['CloseDate']).dt.strftime('%Y-%m-%d')
 
     # replace a value with another value
     # df2['Content__c'] = df2['Content__c'].str.replace("l&#39;","l'")
@@ -156,17 +156,19 @@ def compare_excel_files(file1, file2, column_mapping, primary_key_file1, primary
 
 # Example usage
 column_mapping = {
-    "Name": "Name",
-    "Amount": "Amount",
-    "ForecastCategory": "ForecastCategory",
-    "LeadSource": "LeadSource",
-    "Constant.TRUE": "ATG_Migrated__c",
-    "Type": "Type",
-    "CloseDate": "CloseDate",
-    "StageName": "StageName",
+    "First Name": "First Name",
+    "Last Name": "Last Name",
+    "Phone": "Phone",
+    "Address": "Address",
+    "Height": "Height",
+    "Company": "Company",
+    "ContactID": "ContactID",
+    "DateAdded": "DateAdded",
+    "Status": "Status",
 }
 
-primary_key_file1 = "ATG_Opportunity_External_Id__c"
-primary_key_file2 = "ATG_External_ID__c"
+primary_key_file1 = "ContactID"
+primary_key_file2 = "ContactID"
 
-compare_excel_files("Opportunity Source Iteration 1 10_11.xlsx", "Opportunity Target Iteration 1 10_11.xlsx", column_mapping, primary_key_file1, primary_key_file2)
+compare_excel_files("FILE ONE", "FILE TWO", column_mapping, primary_key_file1, primary_key_file2)
+
