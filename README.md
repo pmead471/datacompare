@@ -46,13 +46,6 @@ primary_key_file2 = "ContactID"  # Primary key in FILE TWO.xlsx
 compare_excel_files("FILE ONE.xlsx", "FILE TWO.xlsx", column_mapping, primary_key_file1, primary_key_file2)
 ```
 
-### Running the Tool
-
-```bash
-python datacompare.py
-```
-The tool will generate `comparison_report.xlsx` in the same directory.
-
 ## Use Cases
 
 This tool is ideal for:
